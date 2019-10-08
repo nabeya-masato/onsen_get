@@ -1,5 +1,5 @@
 config:
     log_level: "info"
-    storage: "./Radio"
+    storage: "Radio"
     logo_folder: "./logo"
     target: "http://www.onsen.ag/app/programs.xml"

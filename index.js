@@ -72,7 +72,7 @@ var continuous_download = list => {
 			let outFile = fs.createWriteStream(filepath);
 		}catch{                        
 			deleteFolderRecursive(folder);
-			folder = config.config.current+download.id;
+			folder = config.config.storage + '/' + download.id;
 			if(!fs.existsSync(folder)){
 				fs.mkdirSync(folder);
 			}
