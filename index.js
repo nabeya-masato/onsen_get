@@ -66,12 +66,12 @@ var continuous_download = list => {
 	let folder = config.config.storage + '/' + download.folder;
 	if (!fs.existsSync(folder)) {
 		try{
-	 		fs.mkdirSync(folder);
+	 		fs.mkdirSync(folder,{ recursive: true });
 			// 出力ファイル名を指定       
 			let filepath = folder+'/'+download.filename;        
 			let outFile = fs.createWriteStream(filepath);
 		}catch{                        
-			deleteFolderRecursive(folder);
+			deleteFolderRecursive(folder, { recursive: true });
 			folder = config.config.storage + '/' + download.id;
 			if(!fs.existsSync(folder)){
 				fs.mkdirSync(folder);
